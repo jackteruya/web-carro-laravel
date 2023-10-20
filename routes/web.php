@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Rotas do Cliente
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/clientes', [\App\Http\Controllers\ClienteController::class, 'showAll']);
+Route::get('/clientes/criar', [\App\Http\Controllers\ClienteController::class, 'create']);
+Route::post('/clientes', [\App\Http\Controllers\ClienteController::class, 'store']);
+Route::get('/clientes/{id}', [\App\Http\Controllers\ClienteController::class, 'show']);
+Route::get('/clientes/editar/{id}', [\App\Http\Controllers\ClienteController::class, 'edit']);
+Route::put('/clientes/atualizar/{id}', [\App\Http\Controllers\ClienteController::class, 'update']);
+Route::get('/clientes/deletar/{id}', [\App\Http\Controllers\ClienteController::class, 'delete']);
+Route::delete('/clientes/{id}', [\App\Http\Controllers\ClienteController::class, 'destroy']);
 
 // Rotas do Veiculo
 Route::get('/veiculos/criar', function () {
