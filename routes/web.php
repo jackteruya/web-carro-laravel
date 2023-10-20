@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VeiculoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,13 +25,8 @@ Route::get('/clientes/deletar/{id}', [\App\Http\Controllers\ClienteController::c
 Route::delete('/clientes/{id}', [\App\Http\Controllers\ClienteController::class, 'destroy']);
 
 // Rotas do Veiculo
-Route::get('/veiculos/criar', function () {
-    return view('veiculos.create', ['cliente' => 'Jose']);
-});
-Route::post('/veiculos', function (Request $request) {
-
-    return redirect('/veiculos/{id}')->with('msg', 'Evento criado com sucesso!');
-});
+Route::get('/veiculos/criar/{cliente_id}', [VeiculoController::class, 'create']);
+Route::post('/veiculos', [VeiculoController::class, 'store']);
 Route::get('/veiculos/{id}', function () {
     return view('veiculos.show', ['veiculo' => '$event', 'cliente' => '$eventOwner']);
 });
