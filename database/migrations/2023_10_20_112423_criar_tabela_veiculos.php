@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('cliente_id')->constrained();
+            $table->string('marca');
             $table->string('modelo');
             $table->integer('ano_fabricacao');
+            $table->boolean('ativo');
         });
     }
 

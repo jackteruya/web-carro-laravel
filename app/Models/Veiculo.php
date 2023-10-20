@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Veiculos extends Model
+class Veiculo extends Model
 {
     use HasFactory;
 
@@ -14,6 +14,6 @@ class Veiculos extends Model
     }
 
     public function revisoes() {
-        return $this->belongsToMany('App\Models\Revisoes');
+        return $this->belongsToMany('App\Models\Revisao');
     }
 }

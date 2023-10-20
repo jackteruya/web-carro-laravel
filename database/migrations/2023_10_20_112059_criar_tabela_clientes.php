@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('genero');
             $table->dateTime('data_nascimento');
+            $table->boolean('ativo');
         });
     }
 

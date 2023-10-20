@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('revisoes', function (Blueprint $table) {
+        Schema::create('revisaos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('veiculo_id')->constrained();
+            $table->foreignId('cliente_id')->constrained();
             $table->dateTime('data_revisao');
+            $table->boolean('ativo');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('revisoes');
+        Schema::dropIfExists('revisaos');
     }
 };
