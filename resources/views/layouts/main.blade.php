@@ -12,9 +12,19 @@
 </head>
 <body>
 <header>
+    <div>
+        <ul>
+            <li><a href="/clientes">Clientes</a></li>
+            <li><a href="/">Dashboards</a></li>
+        </ul>
+    </div>
 </header>
 <main>
     <div>
+        <div>
+            @if(session('msg'))
+                <p class="msg">{{ session('msg') }}</p>
+            @endif
         @yield('content')
     </div>
 </main>
