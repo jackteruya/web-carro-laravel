@@ -19,7 +19,8 @@
                     <th>Genero</th>
                     <th>Data de Nascimento</th>
                     <th>Ativo</th>
-                    <th>Ações</th>
+                    <th>Ações - Cliente</th>
+                    <th>Ações - Veiculo</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,8 @@
                             <a href="/clientes/{{ $cliente->id }}"><button>Visualizar</button></a>
                             <a href="/clientes/editar/{{ $cliente->id }}"><button>Editar</button></a>
                             <a href="/clientes/deletar/{{ $cliente->id }}"><button>Excluir</button></a>
+                        </td>
+                        <td>
                             <a href="/veiculos/criar/{{ $cliente->id }}"><button>Adicionar Veiculo</button></a>
                         </td>
                     </tr>

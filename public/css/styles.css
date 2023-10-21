@@ -1,4 +1,7 @@
-
+body {
+    background-color: #4b5563;
+    color: #dddddd;
+}
 .img-icon {
     width: 15px;
 }
@@ -42,13 +45,13 @@ table {
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #1b173d;
     text-align: center;
     padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: rgba(72, 69, 77, 0.78);
 }
 
 form {
