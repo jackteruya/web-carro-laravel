@@ -39,11 +39,21 @@
                         </td>
                         <td>
                             <a href="/clientes/{{ $cliente->id }}"><button>Visualizar</button></a>
-                            <a href="/clientes/editar/{{ $cliente->id }}"><button>Editar</button></a>
-                            <a href="/clientes/deletar/{{ $cliente->id }}"><button>Excluir</button></a>
+                            @if($cliente->ativo)
+                                <a href="/clientes/editar/{{ $cliente->id }}" ><button>Editar</button></a>
+                                <a href="/clientes/deletar/{{ $cliente->id }}"><button>Excluir</button></a>
+                            @else
+                                <a href="/clientes/editar/{{ $cliente->id }}"><button disabled>Editar</button></a>
+                                <a href="/clientes/deletar/{{ $cliente->id }}"><button disabled>Excluir</button></a>
+                            @endif
                         </td>
                         <td>
-                            <a href="/veiculos/criar/{{ $cliente->id }}"><button>Adicionar Veiculo</button></a>
+                            @if($cliente->ativo)
+                                <a href="/veiculos/criar/{{ $cliente->id }}"><button>Adicionar Veiculo</button></a>
+                            @else
+                                <a href="/veiculos/criar/{{ $cliente->id }}"><button disabled>Adicionar Veiculo</button></a>
+                            @endif
+
                         </td>
                     </tr>
                 @endforeach

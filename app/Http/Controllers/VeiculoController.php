@@ -29,7 +29,7 @@ class VeiculoController extends Controller
 
         $veiculo->save();
 
-        return redirect('/clientes')->with('msg', 'Cliente criado com sucesso!');
+        return view('veiculos.show', ['veiculo' => $veiculo])->with('msg', 'Veiculo criado com sucesso!');
 
     }
 

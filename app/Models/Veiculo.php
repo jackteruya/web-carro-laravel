@@ -9,11 +9,13 @@ class Veiculo extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function cliente() {
-        return $this->belongsTo('App\Models\Clientes');
+        return $this->belongsTo('App\Models\Cliente');
     }
 
-    public function revisoes() {
-        return $this->belongsToMany('App\Models\Revisao');
+    public function revisaos() {
+        return $this->hasMany('App\Models\Revisao');
     }
 }

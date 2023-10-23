@@ -27,9 +27,11 @@ Route::delete('/clientes/{id}', [\App\Http\Controllers\ClienteController::class,
 // Rotas do Veiculo
 Route::get('/veiculos/criar/{cliente_id}', [VeiculoController::class, 'create']);
 Route::post('/veiculos', [VeiculoController::class, 'store']);
-Route::get('/veiculos/{id}', function () {
-    return view('veiculos.show', ['veiculo' => '$event', 'cliente' => '$eventOwner']);
-});
+Route::get('/veiculos/{id}', [VeiculoController::class, 'show']);
+Route::get('/veiculos/editar/{id}', [VeiculoController::class, 'edit']);
+Route::put('/veiculos/atualizar/{id}', [VeiculoController::class, 'update']);
+Route::get('/veiculos/deletar/{id}', [VeiculoController::class, 'delete']);
+Route::delete('/veiculos/{id}', [VeiculoController::class, 'destroy']);
 
 
 
